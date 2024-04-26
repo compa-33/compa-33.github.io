@@ -93,3 +93,20 @@ iframe {
     width: 260; /* Remplir toute la largeur disponible */
 }
 
+/* Masquer la visionneuse PDF sur les téléphones portables */
+@media only screen and (max-width: 1080px) {
+    .pdf-viewer {
+        display: none;
+    }
+}
+/* Masquer le lien de téléchargement sur les ordinateurs */
+@media only screen and (min-width: 768px) {
+    .download-link {
+        display: unset;
+    }
+}
+/* Pour les téléphones portables : affichage du lien de téléchargement */
+.download-link a {
+    font-size: 80px; /* Augmenter la taille du texte */
+    font-family: Sarabun;
+}
