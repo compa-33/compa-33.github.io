@@ -1,0 +1,86 @@
+/* CSS COMPAS */
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.liste-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-family: Raleway;
+    font-style: initial;
+}
+
+li{
+    float: left;
+    display: block;
+    background-color: white;
+}
+.liste-nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    background-color: rgb(0, 114, 83);
+    color: white;
+}
+
+.nav a img {
+    width: 30px;
+    padding: 5px;
+}
+.nav a img:hover {
+    filter: invert(50%);
+}
+
+#logo {
+    background-image: url('/images/totem-01.svg');
+    width: 30px;
+}
+
+/* Site */
+
+.conteneur_site {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.images {
+    padding-top: 30px;
+}
+
+.titre {
+    font-family: Raleway;
+}
+
+h2 {
+    font-family: Raleway;
+    color: darkgreen;
+}
+
+iframe {
+    height: 600px;
+    width: 1000px;
+}
