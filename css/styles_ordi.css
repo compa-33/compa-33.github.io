@@ -84,3 +84,16 @@ iframe {
     height: 600px;
     width: 1000px;
 }
+
+/* Masquer le lien de téléchargement sur les ordinateurs */
+@media only screen and (min-width: 768px) {
+    .download-link {
+        display: none;
+    }
+}
+/* Masquer la visionneuse PDF sur les téléphones portables */
+@media only screen and (max-width: 1080px) {
+    .pdf-viewer {
+        display: unset;
+    }
+}
