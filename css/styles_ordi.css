@@ -85,6 +85,22 @@ iframe {
     width: 1000px;
 }
 
+/* Tableau Tâches */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
 /* Masquer le lien de téléchargement sur les ordinateurs */
 @media only screen and (min-width: 768px) {
     .download-link {
