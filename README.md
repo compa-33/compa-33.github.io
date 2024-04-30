@@ -1,2 +1,4 @@
 # compa-33.github.io
-SGDF GRADIGNAN
+Voici notre site pour la préparation de notre camp
+
+à venir : page de présentation
