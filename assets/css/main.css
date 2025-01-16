@@ -7,7 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 .logo-image {
-    width: 300px; /* Ajustez la largeur selon vos besoins */
+    width: 320px; /* Ajustez la largeur selon vos besoins */
     height: auto; /* Maintient les proportions */
     display: block;
     margin: 0 auto; /* Centrer le logo horizontalement */
@@ -16,7 +16,7 @@
 .logo-container {
     display: flex;
     justify-content: center; /* Centre le logo horizontalement */
-    max-width: 90%; /* Limite la taille du conteneur à 90% de la largeur de la page */
+    max-width: 100%; /* Limite la taille du conteneur à 90% de la largeur de la page */
     margin: 0 auto; /* Centre le conteneur dans la page */
 }
 
@@ -1189,7 +1189,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/langeac.png");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1692,6 +1692,6 @@ input, select, textarea {
 		}
 
 		.logoaccueil {
-			width: 410px;
+			width: 450px;
 			height: 95px;
 		}
