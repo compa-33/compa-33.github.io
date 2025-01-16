@@ -1691,7 +1691,29 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		.logoaccueil {
+		/*.logoaccueil {
 			width: 450px;
 			height: 95px;
 		}
+
+		/* Style par défaut pour les écrans larges */
+.logoaccueil {
+    width: 450px;
+    height: 95px;
+}
+
+/* Style pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 768px) {
+    .logoaccueil {
+        width: 300px;
+        height: 63px;
+    }
+}
+
+/* Style pour les écrans de petite taille (téléphones) */
+@media (max-width: 480px) {
+    .logoaccueil {
+        width: 100%;
+        height: auto;
+    }
+}
