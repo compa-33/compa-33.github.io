@@ -1,22 +1,61 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photobooth</title>
+</head>
+<body>
+  <h1>Photobooth SGDF 📸</h1>
+  <video id="video" autoplay></video>
+  <canvas id="canvas" style="display:none;"></canvas>
+  <br />
+  <input type="email" id="email" placeholder="Votre adresse e-mail" />
+  <br />
+  <button id="capture">Prendre une photo</button>
+  <button id="send" disabled>Envoyer la photo</button>
 
-<html>
-	<head>
-		<title>SGDF - Les Zincomparablesbles</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-        <nav>
-            <ul>
-                <li><a href="/index.html">Accueil</a></li>
-                           </ul>
-        </nav>
-        <iframe src="https://1drv.ms/x/c/3e4d16401d595785/IQRY5Jxd7P7gRZYLqWb9iLeYAVrygn8iRXrd52eHmfcY9YI?wdAllowInteractivity=False&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True" width="1600" height="750" frameborder="0" scrolling="no"></iframe>
-    
+  <script>
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    const emailInput = document.getElementById("email");
+    const captureBtn = document.getElementById("capture");
+    const sendBtn = document.getElementById("send");
 
-              
-    </body>
+    // 📸 Activer la webcam
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+      video.srcObject = stream;
+    });
+
+    // 🖼️ Prendre une photo
+    captureBtn.addEventListener("click", () => {
+      const context = canvas.getContext("2d");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      sendBtn.disabled = false;
+    });
+
+    // 📩 Envoyer la photo
+    sendBtn.addEventListener("click", () => {
+      const email = emailInput.value;
+      if (!email) return alert("Saisis ton e-mail.");
+
+      const imageBase64 = canvas.toDataURL("image/png");
+
+      fetch("https://clameurs-sgdf.onrender.com/send-photo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, imageBase64 })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.message || "Photo envoyée !");
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Erreur lors de l'envoi.");
+      });
+    });
+  </script>
+</body>
+</html>
